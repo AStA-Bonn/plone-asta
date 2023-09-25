@@ -4,8 +4,10 @@ COPY ./package.json /app
 COPY ./yarn.lock /app
 COPY ./ /app
 RUN yarn
+RUN yarn
 RUN yarn build
-CMD ["yarn start:prod"]
+ENTRYPOINT [ "yarn" ]
+CMD ["start:prod"]
 
 #FROM node:16
 #WORKDIR /app
