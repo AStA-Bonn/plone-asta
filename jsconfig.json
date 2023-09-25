@@ -1,9 +1,12 @@
 {
     "compilerOptions": {
         "paths": {
-          "@plone-collective/asta": [
-            "addons/volto-asta/src"
-          ]
+            "@plone-collective/asta": [
+                "addons/volto-asta/src"
+            ],
+            "volto-asta": [
+                "addons/volto-asta/src"
+            ]
         },
         "baseUrl": "src"
     }
