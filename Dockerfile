@@ -1,13 +1,13 @@
 FROM node:16 as builder
 WORKDIR /app
 COPY ./package.json /app
-COPY ./package-lock.json /app
-RUN yarn
+COPY ./yarn.lock /app
 COPY ./ /app
+RUN yarn
 RUN yarn build
-
-FROM node:16
-WORKDIR /app
-COPY --from=0 ./build /app
 CMD ["yarn start:prod"]
+
+#FROM node:16
+#WORKDIR /app
+#COPY --from=0 /app/build /app
 
