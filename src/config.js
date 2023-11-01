@@ -17,8 +17,8 @@
 import '@plone/volto/config';
 
 export default function applyConfig(config) {
-  //config.settings.isMultilingual = true;
-  //config.settings.supportedLanguages = ['de', 'en'];
-  //config.settings.defaultLanguage = 'de';
+  config.settings.isMultilingual = true;
+  config.settings.supportedLanguages = ['de', 'en'];
+  config.settings.defaultLanguage = 'de';
   return config;
 }
