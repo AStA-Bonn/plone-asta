@@ -13,13 +13,13 @@ const ReferatsView = (props) => {
     <td>Email</td>
     <td>{props?.data?.email}</td>
   </tr>
-      {props?.data?.mitarbeiter.map((mitarbeiter) => (
+      {props?.data?.mitarbeiter?.map((mitarbeiter) => (
           <tr>
             <td>Mitarbeiter</td>
             <td>{mitarbeiter.name}</td>
           </tr>
       ))}
-    {props?.data?.anwesenheitsdienste.map((anweseneheit) => (
+    {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
         <tr>
           <td>{anweseneheit.tag}</td>
             <td>
