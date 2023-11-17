@@ -35,6 +35,7 @@ const customModifyWebpackConfig = ({
     options,
   });
   // add custom code here..
+  config.devtool = 'source-map';
   return config;
 };
 

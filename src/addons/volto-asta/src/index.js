@@ -1,5 +1,6 @@
 import tableSVG from '@plone/volto/icons/table.svg';
 import { ReferatsEdit, ReferatsView } from './Referat';
+import Clock from './widgets/Clock';
 const applyConfig = (config) => {
   config.blocks.blocksConfig.Referat = {
     id: 'Referat',
@@ -16,6 +17,7 @@ const applyConfig = (config) => {
       view: [],
     },
   };
+  config.widgets.widget.clock = Clock;
   return config;
 };
 
