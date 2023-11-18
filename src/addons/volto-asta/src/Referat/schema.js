@@ -6,11 +6,12 @@ const MitarbeiterSchema = ({ intl }) => ({
     {
       id: 'default',
       title: intl.formatMessage(messages.defaultFieldset),
-      fields: ['name'],
+      fields: ['name', 'desc'],
     },
   ],
   properties: {
     name: { type: 'string', title: 'Name' },
+    desc: { type: 'string', title: 'Beschreibung' },
   },
 });
 

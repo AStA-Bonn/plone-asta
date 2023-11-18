@@ -15,8 +15,8 @@ const ReferatsView = (props) => {
   </tr>
       {props?.data?.mitarbeiter?.map((mitarbeiter) => (
           <tr>
-            <td>Mitarbeiter</td>
             <td>{mitarbeiter.name}</td>
+            <td>{mitarbeiter.desc}</td>
           </tr>
       ))}
     {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
