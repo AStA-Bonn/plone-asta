@@ -46,6 +46,10 @@ export const ÖffnungSchema = ({ intl }) => ({
       title: 'Enduhrzeit',
       widget: 'clock',
     },
+    ort: {
+      title: 'Ort (optional)',
+      widget: 'string',
+    },
   },
 });
 
@@ -59,6 +63,7 @@ export const ReferatsSchema = ({ intl }) => ({
       fields: [
         'name',
         'email',
+        'ort',
         'telefon',
         'mitarbeiter',
         'anwesenheitsdienste',
@@ -67,9 +72,13 @@ export const ReferatsSchema = ({ intl }) => ({
   ],
 
   properties: {
+    ort: {
+      type: 'string',
+      title: 'Ort',
+    },
     name: {
       type: 'string',
-      title: 'Name (XX:XX - XX:XX) ',
+      title: 'Name',
     },
     email: {
       type: 'email',
