@@ -67,6 +67,7 @@ export const ReferatsSchema = ({ intl }) => ({
         'telefon',
         'mitarbeiter',
         'anwesenheitsdienste',
+        // 'align'
       ],
     },
   ],
@@ -98,6 +99,10 @@ export const ReferatsSchema = ({ intl }) => ({
       widget: 'object_list',
       schema: MitarbeiterSchema({ intl }),
     },
+    // align: {
+    //     title: intl.formatMessage(messages.Align),
+    //     widget: 'align',
+    //   },
   },
 
   required: [],
@@ -140,4 +145,8 @@ const messages = defineMessages({
     id: 'Data file',
     defaultMessage: 'Data file',
   },
+  // Align: {
+  //   id: 'Alignment',
+  //   defaultMessage: 'Alignment',
+  // },
 });

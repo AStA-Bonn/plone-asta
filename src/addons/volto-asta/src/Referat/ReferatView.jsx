@@ -1,4 +1,10 @@
 import React from 'react';
+import cx from 'classnames';
+import {
+  flattenToAppURL,
+  isInternalURL,
+  withBlockExtensions,
+} from '@plone/volto/helpers';
 
 const ReferatsView = ({ className, data, detached, properties, style}) => {
   const isOrt = data?.ort && data.ort.length > 0
@@ -7,6 +13,18 @@ const ReferatsView = ({ className, data, detached, properties, style}) => {
   const isMitarbeitende = data?.mitarbeiter && data.mitarbeiter.length > 0;
   const isAnwensheitsdienste = data?.anwesenheitsdienste?.telefon && data.anwesenheitsdienste.length > 0;
   return (
+    <p
+      className={cx(
+        'block image align',
+        {
+          center: !Boolean(data.align),
+          detached,
+        },
+        data.align,
+        className,
+      )}
+      style={style}
+    >
     <div>
         {isName &&
             <h2> {data?.name}</h2>
@@ -51,7 +69,8 @@ const ReferatsView = ({ className, data, detached, properties, style}) => {
         ))}
       </table>
     </div>
+  </p>
   );
 };
 
-export default ReferatsView;
+export default withBlockExtensions(ReferatsView);
