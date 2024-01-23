@@ -1,5 +1,9 @@
 ## Documentation
 
+## connect to asta backend
+
+RAZZLE_INTERNAL_API_PATH='http://localhost:8080/AStA' NODE_OPTIONS=--openssl-legacy-provider npx razzle start
+
 A training on how to create your own website using Volto is available as part of the Plone training at [https://training.plone.org/5/volto/index.html](https://training.plone.org/5/volto/index.html).
 
 ## Quick Start
