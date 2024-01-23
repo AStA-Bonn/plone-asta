@@ -1,10 +1,18 @@
 import React from 'react';
+import cx from 'classnames';
+import {
+  flattenToAppURL,
+  isInternalURL,
+  withBlockExtensions,
+} from '@plone/volto/helpers';
 
 function mapToDay(day: 'mo' | 'di' | 'mi' | 'do' | 'fr') {
   return {'mo': 'Montag', 'di': "Dienstag", 'mi': "Mittwoch", 'do': "Donnerstag", 'fr': 'Freitag'}[day];
 }
 
 const ReferatsView = (props) => {
+  const { className, data, detached, properties, style} = props;
+
   console.log(props.data); const isOrt = props?.data?.ort && props.data.ort.length > 2;
   const isName = props?.data?.name && props.data.name.length > 2;
   // isMail is bool
@@ -13,7 +21,7 @@ const ReferatsView = (props) => {
      return <div></div>;
     }
     return (
-      <div style={{ fontSize: '1rem' }}>
+      <div style={{fontSize: '1rem' }}>
         <p style={{ paddingTop: 0, marginTop: 0, paddingBottom: 0, marginBottom: 0 }}>
         {attrType === 'email' &&
           <a href={'mailto:' + content}>{content}</a> }
@@ -55,4 +63,4 @@ const ReferatsView = (props) => {
   );
 };
 
-export default ReferatsView;
+export default withBlockExtensions(ReferatsView);
