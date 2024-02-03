@@ -1,72 +1,72 @@
-import { defineMessages } from 'react-intl';
+import { defineMessages } from "react-intl";
 
 const MitarbeiterSchema = ({ intl }) => ({
-  title: 'Mitarbeiter',
+  title: "Mitarbeiter",
   fieldsets: [
     {
-      id: 'default',
+      id: "default",
       title: intl.formatMessage(messages.defaultFieldset),
-      fields: ['name', 'desc'],
+      fields: ["name", "desc"],
     },
   ],
   properties: {
-    name: { type: 'string', title: 'Name' },
-    desc: { type: 'string', title: 'Beschreibung' },
+    name: { type: "string", title: "Name" },
+    desc: { type: "string", title: "Beschreibung" },
   },
 });
 
 export const ÖffnungSchema = ({ intl }) => ({
-  title: 'Öffnung',
+  title: "Öffnung",
 
   fieldsets: [
     {
-      id: 'default',
+      id: "default",
       title: intl.formatMessage(messages.styling),
-      fields: ['tag', 'startHour', 'endHour'],
+      fields: ["tag", "startHour", "endHour"],
     },
   ],
 
   properties: {
     tag: {
-      widget: 'select',
-      title: 'Tag',
+      widget: "select",
+      title: "Tag",
       choices: [
-        ['mo', 'mo'],
-        ['di', 'di'],
-        ['mi', 'mi'],
-        ['do', 'do'],
-        ['fr', 'fr'],
+        ["mo", "mo"],
+        ["di", "di"],
+        ["mi", "mi"],
+        ["do", "do"],
+        ["fr", "fr"],
       ],
     },
     startHour: {
-      title: 'Startuhrzeit',
-      widget: 'clock',
+      title: "Startuhrzeit",
+      widget: "clock",
     },
     endHour: {
-      title: 'Enduhrzeit',
-      widget: 'clock',
+      title: "Enduhrzeit",
+      widget: "clock",
     },
     ort: {
-      title: 'Ort (optional)',
-      widget: 'string',
+      title: "Ort (optional)",
+      widget: "string",
     },
   },
 });
 
 export const ReferatsSchema = ({ intl }) => ({
-  title: 'Table',
+  title: "Table",
 
   fieldsets: [
     {
-      id: 'default',
+      id: "default",
       title: intl.formatMessage(messages.styling),
       fields: [
-        'name',
-        'email',
-        'ort',
-        'telefon',
-        'mitarbeiter',
-        'anwesenheitsdienste',
+        "name",
+        "email",
+        "ort",
+        "telefon",
+        "mitarbeiter",
+        "anwesenheitsdienste",
         // 'align'
       ],
     },
@@ -74,29 +74,29 @@ export const ReferatsSchema = ({ intl }) => ({
 
   properties: {
     ort: {
-      type: 'string',
-      title: 'Ort',
+      type: "string",
+      title: "Ort",
     },
     name: {
-      type: 'string',
-      title: 'Name',
+      type: "string",
+      title: "Name",
     },
     email: {
-      type: 'email',
-      title: 'Email',
+      type: "email",
+      title: "Email",
     },
     telefon: {
-      type: 'string',
-      title: 'Telefon',
+      type: "string",
+      title: "Telefon",
     },
     anwesenheitsdienste: {
-      title: 'Anwesehnheits',
-      widget: 'object_list',
+      title: "Anwesehnheits",
+      widget: "object_list",
       schema: ÖffnungSchema({ intl }),
     },
     mitarbeiter: {
-      title: 'Mitarbeiter',
-      widget: 'object_list',
+      title: "Mitarbeiter",
+      widget: "object_list",
       schema: MitarbeiterSchema({ intl }),
     },
     // align: {
@@ -110,40 +110,40 @@ export const ReferatsSchema = ({ intl }) => ({
 
 const messages = defineMessages({
   fixed: {
-    id: 'Fixed width table cells',
-    defaultMessage: 'Fixed width table cells',
+    id: "Fixed width table cells",
+    defaultMessage: "Fixed width table cells",
   },
   compact: {
-    id: 'Make the table compact',
-    defaultMessage: 'Make the table compact',
+    id: "Make the table compact",
+    defaultMessage: "Make the table compact",
   },
   basic: {
-    id: 'Reduce complexity',
-    defaultMessage: 'Reduce complexity',
+    id: "Reduce complexity",
+    defaultMessage: "Reduce complexity",
   },
   celled: {
-    id: 'Divide each row into separate cells',
-    defaultMessage: 'Divide each row into separate cells',
+    id: "Divide each row into separate cells",
+    defaultMessage: "Divide each row into separate cells",
   },
   inverted: {
-    id: 'Table color inverted',
-    defaultMessage: 'Table color inverted',
+    id: "Table color inverted",
+    defaultMessage: "Table color inverted",
   },
   striped: {
-    id: 'Stripe alternate rows with color',
-    defaultMessage: 'Stripe alternate rows with color',
+    id: "Stripe alternate rows with color",
+    defaultMessage: "Stripe alternate rows with color",
   },
   styling: {
-    id: 'Styling',
-    defaultMessage: 'Styling',
+    id: "Styling",
+    defaultMessage: "Styling",
   },
   defaultFieldset: {
-    id: 'Default',
-    defaultMessage: 'Default',
+    id: "Default",
+    defaultMessage: "Default",
   },
   dataFile: {
-    id: 'Data file',
-    defaultMessage: 'Data file',
+    id: "Data file",
+    defaultMessage: "Data file",
   },
   // Align: {
   //   id: 'Alignment',

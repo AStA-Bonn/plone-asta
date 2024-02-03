@@ -1,9 +1,9 @@
-import React from 'react';
-import ReferatsView from './ReferatView';
-import { Segment, Form } from 'semantic-ui-react';
-import { SidebarPortal, Field } from '@plone/volto/components';
-import { ReferatsSchema } from './schema';
-import { InlineForm } from '@plone/volto/components';
+import React from "react";
+import ReferatsView from "./ReferatView";
+import { Segment, Form } from "semantic-ui-react";
+import { SidebarPortal, Field } from "@plone/volto/components";
+import { ReferatsSchema } from "./schema";
+import { InlineForm } from "@plone/volto/components";
 
 const ReferatsEdit = (props) => {
   const { selected, onChangeBlock, block, data } = props;
