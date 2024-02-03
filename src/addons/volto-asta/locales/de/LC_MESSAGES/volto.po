@@ -1,0 +1,11 @@
+#: src/config
+email "E-Mail"
+tel "Telefon"
+place "ort"
+staff "Mitarbeitende"
+attendance_times "Anwesenheitszeiten"
+monday "Montag"
+tuesday "Dienstag"
+wednesday "Mittwoch"
+thursday "Donnerstag"
+friday "Freitag"
