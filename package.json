@@ -139,7 +139,8 @@
   "dependencies": {
     "@mbarde/volto-fullcalendar-block": "^0.7.0",
     "@plone/volto": "16.20.7",
-    "postcss": "8.4.30"
+    "postcss": "8.4.30",
+    "@eeacms/volto-anchors": "*"
   },
   "devDependencies": {
     "@plone/scripts": "^2.1.5",
