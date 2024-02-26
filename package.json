@@ -25,7 +25,9 @@
     "build-storybook": "build-storybook"
   },
   "addons": [
-    "volto-asta"
+    "volto-asta",
+    "@mbarde/volto-fullcalendar-block",
+    "@eeacms/volto-anchors"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -135,6 +137,7 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
+    "@mbarde/volto-fullcalendar-block": "^0.7.0",
     "@plone/volto": "16.20.7",
     "postcss": "8.4.30"
   },
