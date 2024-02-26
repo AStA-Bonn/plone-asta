@@ -1,11 +1,9 @@
-import { defineMessages } from "react-intl";
-
 const MitarbeiterSchema = ({ intl }) => ({
   title: "Mitarbeiter",
   fieldsets: [
     {
       id: "default",
-      title: intl.formatMessage(messages.defaultFieldset),
+      title: "",
       fields: ["name", "desc"],
     },
   ],
@@ -21,7 +19,7 @@ export const ÖffnungSchema = ({ intl }) => ({
   fieldsets: [
     {
       id: "default",
-      title: intl.formatMessage(messages.styling),
+      title: "",
       fields: ["tag", "startHour", "endHour"],
     },
   ],
@@ -59,7 +57,7 @@ export const ReferatsSchema = ({ intl }) => ({
   fieldsets: [
     {
       id: "default",
-      title: intl.formatMessage(messages.styling),
+      title: "",
       fields: [
         "name",
         "email",
@@ -106,47 +104,4 @@ export const ReferatsSchema = ({ intl }) => ({
   },
 
   required: [],
-});
-
-const messages = defineMessages({
-  fixed: {
-    id: "Fixed width table cells",
-    defaultMessage: "Fixed width table cells",
-  },
-  compact: {
-    id: "Make the table compact",
-    defaultMessage: "Make the table compact",
-  },
-  basic: {
-    id: "Reduce complexity",
-    defaultMessage: "Reduce complexity",
-  },
-  celled: {
-    id: "Divide each row into separate cells",
-    defaultMessage: "Divide each row into separate cells",
-  },
-  inverted: {
-    id: "Table color inverted",
-    defaultMessage: "Table color inverted",
-  },
-  striped: {
-    id: "Stripe alternate rows with color",
-    defaultMessage: "Stripe alternate rows with color",
-  },
-  styling: {
-    id: "Styling",
-    defaultMessage: "Styling",
-  },
-  defaultFieldset: {
-    id: "Default",
-    defaultMessage: "Default",
-  },
-  dataFile: {
-    id: "Data file",
-    defaultMessage: "Data file",
-  },
-  // Align: {
-  //   id: 'Alignment',
-  //   defaultMessage: 'Alignment',
-  // },
 });

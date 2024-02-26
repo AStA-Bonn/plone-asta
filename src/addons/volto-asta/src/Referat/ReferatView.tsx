@@ -1,14 +1,18 @@
 import React from "react";
+// @ts-ignore
 import { withBlockExtensions } from "@plone/volto/helpers";
 import { useIntl, FormattedMessage, defineMessages } from "react-intl";
+import { MESSAGES, MESSAGES_EN, getMessages } from "./lang";
 
-function mapToDay(day: "mo" | "di" | "mi" | "do" | "fr") {
+function mapToDay(day: "mo" | "di" | "mi" | "do" | "fr" | 'sa' | 'su', messages: MESSAGES) {
   return {
-    mo: "Montag",
-    di: "Dienstag",
-    mi: "Mittwoch",
-    do: "Donnerstag",
-    fr: "Freitag",
+    mo: messages.days.monday,
+    di: messages.days.tuesday,
+    mi: messages.days.wednesday,
+    do: messages.days.thursday,
+    fr: messages.days.friday,
+    sa: messages.days.saturday,
+    su: messages.days.sunday,
   }[day];
 }
 function AttrBox({
@@ -54,34 +58,29 @@ function AttrBox({
 const ReferatsView = (props) => {
   const { className, data, detached, properties, style } = props;
 
+  const isOrt = props?.data?.ort;
+  const isName = props?.data?.name;
+  // isMail is bool
   const intl = useIntl();
-  const messages = defineMessages({
-    email: {
-      id: "email",
-    },
-    phone: {
-      id: "phone",
-    },
-  });
+  const messages = getMessages(intl.locale);
   return (
     <div>
       <div>
         <AttrBox
-          desc={intl.formatMessage(messages.email)}
-          attrType="emailtabWidth:"
+          desc={messages.attr.email}
+          attrType="email"
           content={props?.data?.email}
         ></AttrBox>
         <AttrBox
-          desc={intl.formatMessage(messages.phone)}
+          desc={messages.attr.phone}
           attrType="phone"
           content={props.data?.telefon}
         ></AttrBox>
-        {isOrt && <AttrBox desc="Ort" content={props?.data?.ort}></AttrBox>}
+        {isOrt && <AttrBox desc={messages.attr.place} content={props?.data?.ort}></AttrBox>}
       </div>
       <div>
         <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
-          {" "}
-          <FormattedMessage id="staff" />{" "}
+          {messages.attr.staff}
         </h3>
         <table>
           {props?.data?.mitarbeiter?.map(
@@ -94,13 +93,12 @@ const ReferatsView = (props) => {
           )}
         </table>
         <h3 style={{ marginBottom: "0.25rem", marginTop: "0.25rem" }}>
-          {" "}
-          <FormattedMessage id="attendance_times" />{" "}
+          {messages.attr.attendance_times}
         </h3>
         <table>
           {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
             <AttrBox
-              desc={mapToDay(anweseneheit.tag)}
+              desc={mapToDay(anweseneheit.tag, messages)}
               content={`${anweseneheit.startHour} - ${anweseneheit.endHour}`}
             ></AttrBox>
           ))}
