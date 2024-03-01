@@ -1,5 +1,5 @@
 const MitarbeiterSchema = ({ intl }) => ({
-  title: "Mitarbeiter",
+  title: "Mitarbeitende",
   fieldsets: [
     {
       id: "default",

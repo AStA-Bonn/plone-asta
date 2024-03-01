@@ -62,7 +62,7 @@ export const MESSAGES_DE: MESSAGES = {
         phone: "Telefon",
         email: "E-Mail",
         place: "Ort",
-        staff: "Mitarbeiter",
+        staff: "Mitarbeitende",
         attendance_times: "Anwesenheitszeiten",
     }
 }
