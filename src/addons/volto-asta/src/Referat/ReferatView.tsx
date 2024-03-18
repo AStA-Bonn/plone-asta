@@ -82,16 +82,18 @@ const ReferatsView = (props) => {
         <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
           {messages.attr.staff}
         </h3>
-        <table>
+        <div style={{ display: "flex", flexWrap: 'wrap' }}>
           {props?.data?.mitarbeiter?.map(
             (mitarbeiter: { name: string; desc: string }) => (
-              <AttrBox
-                desc={mitarbeiter.desc}
-                content={mitarbeiter.name}
-              ></AttrBox>
+              <div style={{ minWidth: "10rem", flex: '1' }}>
+                <AttrBox
+                  desc={mitarbeiter.desc}
+                  content={mitarbeiter.name}
+                ></AttrBox>
+              </div>
             )
           )}
-        </table>
+        </div>
         <h3 style={{ marginBottom: "0.25rem", marginTop: "0.25rem" }}>
           {messages.attr.attendance_times}
         </h3>
