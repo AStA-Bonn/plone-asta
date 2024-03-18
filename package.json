@@ -27,7 +27,8 @@
   "addons": [
     "volto-asta",
     "@mbarde/volto-fullcalendar-block",
-    "@eeacms/volto-anchors"
+    "@eeacms/volto-anchors",
+    "@eeacms/volto-block-style"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -137,10 +138,11 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
+    "@eeacms/volto-anchors": "*",
+    "@eeacms/volto-block-style": "^6.1.0",
     "@mbarde/volto-fullcalendar-block": "^0.7.0",
     "@plone/volto": "16.20.7",
-    "postcss": "8.4.30",
-    "@eeacms/volto-anchors": "*"
+    "postcss": "8.4.30"
   },
   "devDependencies": {
     "@plone/scripts": "^2.1.5",
