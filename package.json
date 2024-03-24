@@ -28,7 +28,8 @@
     "volto-asta",
     "@mbarde/volto-fullcalendar-block",
     "@eeacms/volto-anchors",
-    "@eeacms/volto-block-style"
+    "@eeacms/volto-block-style",
+    "@eeacms/volto-accordion-block"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -138,11 +139,16 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
+    "@codesyntax/volto-menu-customization": "0.3.0",
+    "@eeacms/volto-accordion-block": "^10.4.6",
     "@eeacms/volto-anchors": "*",
     "@eeacms/volto-block-style": "^6.1.0",
     "@mbarde/volto-fullcalendar-block": "^0.7.0",
+    "@myriadicity/volto-navigation-dropdown": "0.3.10",
     "@plone/volto": "16.20.7",
-    "postcss": "8.4.30"
+    "es-abstract": "^1.23.2",
+    "postcss": "8.4.30",
+    "volto-dropdownmenu": "4.1.1"
   },
   "devDependencies": {
     "@plone/scripts": "^2.1.5",

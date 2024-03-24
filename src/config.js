@@ -21,5 +21,9 @@ export default function applyConfig(config) {
   config.settings.supportedLanguages = ['de', 'en'];
   config.settings.defaultLanguage = 'de';
   config.settings.pluggableStylesBlocksWhitelist = [];
+  config.settings = {
+    ...config.settings,
+    navDepth: 2,
+  };
   return config;
 }

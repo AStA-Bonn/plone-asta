@@ -1,0 +1,7 @@
+i.icon,
+i.icons {
+  font-size: 1em !important;
+}
+.ui.menu .dropdown.item .menu {
+  right: unset !important;
+}
