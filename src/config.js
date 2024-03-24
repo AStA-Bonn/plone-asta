@@ -21,6 +21,7 @@ export default function applyConfig(config) {
   config.settings.supportedLanguages = ['de', 'en'];
   config.settings.defaultLanguage = 'de';
   config.settings.pluggableStylesBlocksWhitelist = [];
+  config.settings.pdfWorkerSrc = '//www.eea.europa.eu/pdfjs/pdf.worker.min.js';
   config.settings = {
     ...config.settings,
     navDepth: 2,

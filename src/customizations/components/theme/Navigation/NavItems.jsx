@@ -23,6 +23,9 @@ const NavItems = ({ items, lang, closeMenu }) => {
       );
   };
 
+  // shift operates on the array. Copy array to prevent overwriting the global array
+  items = [...items];
+  items.shift();
   return (
     <>
       {items.map((item) =>

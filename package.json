@@ -139,10 +139,12 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
+    "@bundled-es-modules/pdfjs-dist": "3.6.172-alpha.1",
     "@codesyntax/volto-menu-customization": "0.3.0",
     "@eeacms/volto-accordion-block": "^10.4.6",
     "@eeacms/volto-anchors": "*",
     "@eeacms/volto-block-style": "^6.1.0",
+    "@eeacms/volto-pdf-block": "1.0.11",
     "@mbarde/volto-fullcalendar-block": "^0.7.0",
     "@myriadicity/volto-navigation-dropdown": "0.3.10",
     "@plone/volto": "16.20.7",

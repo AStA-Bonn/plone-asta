@@ -123,7 +123,6 @@ class Navigation extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    // console.log(this.state.isMobileMenuOpen);
     return (
       <nav className="navigation" id="navigation" aria-label="navigation">
         <div className="hamburger-wrapper mobile tablet only">

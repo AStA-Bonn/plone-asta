@@ -1846,6 +1846,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bundled-es-modules/pdfjs-dist@npm:3.6.172-alpha.1":
+  version: 3.6.172-alpha.1
+  resolution: "@bundled-es-modules/pdfjs-dist@npm:3.6.172-alpha.1"
+  checksum: 5f5654dfc8262fea4b617475ff2f0cc387d9b89890435146577ed3b425dd9d1773103bb3c69180b33527de59b8eaf613e6b56d88afcbc5e2b773ed6ed1b6e39b
+  languageName: node
+  linkType: hard
+
+"@bundled-es-modules/pdfjs-dist@npm:^2.2.228-alpha1":
+  version: 2.16.106
+  resolution: "@bundled-es-modules/pdfjs-dist@npm:2.16.106"
+  checksum: acd01edce45104a8aac07e382ce4e8bf31ef3a206a3d24960c9117e29f92a3f06fc4c609ea6f017ec6c7f6332362a8c4522c6e19a7fa4443d60371d5aa925953
+  languageName: node
+  linkType: hard
+
 "@cnakazawa/watch@npm:^1.0.3":
   version: 1.0.4
   resolution: "@cnakazawa/watch@npm:1.0.4"
@@ -1941,6 +1955,15 @@ __metadata:
     "@eeacms/volto-widget-theme-picker": "*"
     react-color: ~2.18.1
   checksum: 1a0abf8193d0cc873b03c9bedd4e4a64fb37e926a9985868f1a5f7c6139d509598b93170cefdff28da8fb1f8b24e7b8abca6a5bdaa26fef6b303d1ea467dc444
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-pdf-block@npm:1.0.11":
+  version: 1.0.11
+  resolution: "@eeacms/volto-pdf-block@npm:1.0.11"
+  dependencies:
+    "@mikecousins/react-pdf": 5.5.1
+  checksum: 1459ba3a52064d2a2ff2797a5b90e6573a2719d069712626279d4f2e2206ae36879cab2e42237354002413effba92412419d8f1e16639c4e2be027674490ae56
   languageName: node
   linkType: hard
 
@@ -2843,6 +2866,17 @@ __metadata:
   version: 1.6.22
   resolution: "@mdx-js/util@npm:1.6.22"
   checksum: 4b393907e39a1a75214f0314bf72a0adfa5e5adffd050dd5efe9c055b8549481a3cfc9f308c16dfb33311daf3ff63added7d5fd1fe52db614c004f886e0e559a
+  languageName: node
+  linkType: hard
+
+"@mikecousins/react-pdf@npm:5.5.1":
+  version: 5.5.1
+  resolution: "@mikecousins/react-pdf@npm:5.5.1"
+  dependencies:
+    "@bundled-es-modules/pdfjs-dist": ^2.2.228-alpha1
+  peerDependencies:
+    react: ">=16"
+  checksum: a8c19eff10463d63fa4523cf95dcac416c57002e8f87816e67fd2bb21ffc71fb34139f916147f020604375bd940a112f53b290766646f96db3377f7f566e0676
   languageName: node
   linkType: hard
 
@@ -17210,10 +17244,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "myvolotoproject@workspace:."
   dependencies:
+    "@bundled-es-modules/pdfjs-dist": 3.6.172-alpha.1
     "@codesyntax/volto-menu-customization": 0.3.0
     "@eeacms/volto-accordion-block": ^10.4.6
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": ^6.1.0
+    "@eeacms/volto-pdf-block": 1.0.11
     "@mbarde/volto-fullcalendar-block": ^0.7.0
     "@myriadicity/volto-navigation-dropdown": 0.3.10
     "@plone/scripts": ^2.1.5
