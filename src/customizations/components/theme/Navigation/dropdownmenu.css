@@ -5,6 +5,17 @@ i.icons {
 .ui.menu .dropdown.item .menu {
   right: unset !important;
   .item:hover {
-    color: #430D0D !important
+    color: #430d0d !important;
+  }
+}
+
+.menu {
+  max-width: 95vw;
+  .item {
+    .text {
+      max-width: 95vw;
+      display: inline-block;
+      padding-right: 3rem;
+    }
   }
 }
