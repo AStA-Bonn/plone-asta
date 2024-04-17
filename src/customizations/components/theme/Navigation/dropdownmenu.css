@@ -13,6 +13,9 @@ i.icons {
     right: unset !important;
     white-space: normal !important;
     background-color: red;
+    .item {
+      padding-bottom: 0;
+    }
     .item .text {
       font-size: 1.2rem;
     }
@@ -21,10 +24,12 @@ i.icons {
     color: #430d0d !important;
   }
   .item {
+    font-size: 1.2rem;
     .text {
       max-width: 95vw;
       display: inline-block;
       white-space: break-spaces;
+      font-size: 1.2rem;
     }
   }
 }
