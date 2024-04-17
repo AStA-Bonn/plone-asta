@@ -2,20 +2,25 @@ i.icon,
 i.icons {
   font-size: 1em !important;
 }
-.ui.menu .dropdown.item .menu {
-  right: unset !important;
+
+.mobile-dropdown {
+  .menu {
+    width: min(95vw, 400px);
+    right: unset !important;
+    white-space: normal !important;
+    background-color: red;
+    .item .text {
+      font-size: 1.2rem;
+    }
+  }
   .item:hover {
     color: #430d0d !important;
   }
-}
-
-.menu {
-  max-width: 95vw;
   .item {
     .text {
       max-width: 95vw;
       display: inline-block;
-      padding-right: 3rem;
+      white-space: break-spaces;
     }
   }
 }

@@ -28,32 +28,64 @@ const NavItems = ({ items, lang, closeMenu }) => {
   items.shift();
   return (
     <>
-      {items.map((item) =>
-        item && item.items && item.items.length > 0 ? (
-          <Dropdown
-            text={item.title}
-            className="item"
-            id="dropdown-menu"
-            key={item.url}
-          >
-            <Dropdown.Menu key={item.url}>
-              {item.items.map((dropdownitem) => (
-                <Dropdown.Item
-                  onClick={handleItemClick}
-                  value={dropdownitem.title}
-                  text={dropdownitem.title}
-                  key={dropdownitem.url}
-                  // closeOnChange={true}
-                  as={Link}
-                  to={dropdownitem.url === '' ? '/' : dropdownitem.url}
-                />
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
-        ) : (
-          <NavItem item={item} lang={lang} key={item.url} />
-        ),
-      )}
+      <div className="computer large screen widescreen only">
+        <div style={{ display: 'flex' }}>
+          {items.map((item) =>
+            item && item.items && item.items.length > 0 ? (
+              <Dropdown
+                text={item.title}
+                className="item"
+                id="dropdown-menu"
+                key={item.url}
+              >
+                <Dropdown.Menu key={item.url}>
+                  {item.items.map((dropdownitem) => (
+                    <Dropdown.Item
+                      onClick={handleItemClick}
+                      value={dropdownitem.title}
+                      text={dropdownitem.title}
+                      key={dropdownitem.url}
+                      // closeOnChange={true}
+                      as={Link}
+                      to={dropdownitem.url === '' ? '/' : dropdownitem.url}
+                    />
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+            ) : (
+              <NavItem item={item} lang={lang} key={item.url} />
+            ),
+          )}
+        </div>
+      </div>
+      <div className="mobile only mobile-dropdown">
+        {items.map((item) =>
+          item && item.items && item.items.length > 0 ? (
+            <Dropdown
+              text={item.title}
+              className="item"
+              id="dropdown-menu"
+              key={item.url}
+            >
+              <Dropdown.Menu key={item.url}>
+                {item.items.map((dropdownitem) => (
+                  <Dropdown.Item
+                    onClick={handleItemClick}
+                    value={dropdownitem.title}
+                    text={dropdownitem.title}
+                    key={dropdownitem.url}
+                    // closeOnChange={true}
+                    as={Link}
+                    to={dropdownitem.url === '' ? '/' : dropdownitem.url}
+                  />
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          ) : (
+            <NavItem item={item} lang={lang} key={item.url} />
+          ),
+        )}
+      </div>
     </>
   );
 };
