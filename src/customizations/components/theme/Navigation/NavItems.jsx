@@ -29,7 +29,7 @@ const NavItems = ({ items, lang, closeMenu }) => {
   return (
     <>
       <div className="computer large screen widescreen only">
-        <div style={{ display: 'flex' }}>
+        <div className="flexTop">
           {items.map((item) =>
             item && item.items && item.items.length > 0 ? (
               <Dropdown

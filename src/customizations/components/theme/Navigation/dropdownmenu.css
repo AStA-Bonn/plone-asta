@@ -3,6 +3,10 @@ i.icons {
   font-size: 1em !important;
 }
 
+.flexTop {
+  display: flex;
+}
+
 .mobile-dropdown {
   .menu {
     width: min(95vw, 400px);
