@@ -7,6 +7,10 @@ i.icons {
   display: flex;
 }
 
+.menu {
+  right: unset !important;
+}
+
 .mobile-dropdown {
   .menu {
     width: min(95vw, 400px);

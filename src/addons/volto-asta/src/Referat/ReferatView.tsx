@@ -1,10 +1,14 @@
 import React from "react";
+import "./ReferatView.scss";
 // @ts-ignore
 import { withBlockExtensions } from "@plone/volto/helpers";
 import { useIntl, FormattedMessage, defineMessages } from "react-intl";
 import { MESSAGES, MESSAGES_EN, getMessages } from "./lang";
 
-function mapToDay(day: "mo" | "di" | "mi" | "do" | "fr" | 'sa' | 'su', messages: MESSAGES) {
+function mapToDay(
+  day: "mo" | "di" | "mi" | "do" | "fr" | "sa" | "su",
+  messages: MESSAGES
+) {
   return {
     mo: messages.days.monday,
     di: messages.days.tuesday,
@@ -28,7 +32,7 @@ function AttrBox({
     return <div></div>;
   }
   return (
-    <div style={{ fontSize: "1rem" }}>
+    <div style={{ fontSize: "1rem", minWidth: "10rem", flex: "1" }}>
       <p
         style={{
           paddingTop: 0,
@@ -55,6 +59,10 @@ function AttrBox({
   );
 }
 
+const FlexDiv = ({ children }) => {
+  return <div style={{ display: "flex", flexWrap: "wrap" }}>{children}</div>;
+};
+
 const ReferatsView = (props) => {
   const { className, data, detached, properties, style } = props;
 
@@ -63,29 +71,40 @@ const ReferatsView = (props) => {
   // isMail is bool
   const intl = useIntl();
   const messages = getMessages(intl.locale);
+  console.log(data);
   return (
-    <div>
+    <div className="ReferatsView">
       <div>
-        <AttrBox
-          desc={messages.attr.email}
-          attrType="email"
-          content={props?.data?.email}
-        ></AttrBox>
-        <AttrBox
-          desc={messages.attr.phone}
-          attrType="phone"
-          content={props.data?.telefon}
-        ></AttrBox>
-        {isOrt && <AttrBox desc={messages.attr.place} content={props?.data?.ort}></AttrBox>}
+        <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
+          {props?.data?.name}
+        </h3>
+        <FlexDiv>
+          <AttrBox
+            desc={messages.attr.email}
+            attrType="email"
+            content={props?.data?.email}
+          ></AttrBox>
+          <AttrBox
+            desc={messages.attr.phone}
+            attrType="phone"
+            content={props.data?.telefon}
+          ></AttrBox>
+          {isOrt && (
+            <AttrBox
+              desc={messages.attr.place}
+              content={props?.data?.ort}
+            ></AttrBox>
+          )}
+        </FlexDiv>
       </div>
       <div>
         <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
           {messages.attr.staff}
         </h3>
-        <div style={{ display: "flex", flexWrap: 'wrap' }}>
+        <FlexDiv>
           {props?.data?.mitarbeiter?.map(
             (mitarbeiter: { name: string; desc: string }) => (
-              <div style={{ minWidth: "10rem", flex: '1' }}>
+              <div style={{ minWidth: "10rem", flex: "1" }}>
                 <AttrBox
                   desc={mitarbeiter.desc}
                   content={mitarbeiter.name}
@@ -93,18 +112,22 @@ const ReferatsView = (props) => {
               </div>
             )
           )}
-        </div>
-        <h3 style={{ marginBottom: "0.25rem", marginTop: "0.25rem" }}>
-          {messages.attr.attendance_times}
-        </h3>
-        <table>
-          {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
-            <AttrBox
-              desc={mapToDay(anweseneheit.tag, messages)}
-              content={`${anweseneheit.startHour} - ${anweseneheit.endHour}`}
-            ></AttrBox>
-          ))}
-        </table>
+        </FlexDiv>
+        {props?.data?.anweseneheitsdienste && (
+          <>
+            <h3 style={{ marginBottom: "0.25rem", marginTop: "0.25rem" }}>
+              {messages.attr.attendance_times}
+            </h3>
+            <table>
+              {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
+                <AttrBox
+                  desc={mapToDay(anweseneheit.tag, messages)}
+                  content={`${anweseneheit.startHour} - ${anweseneheit.endHour}`}
+                ></AttrBox>
+              ))}
+            </table>
+          </>
+        )}
       </div>
     </div>
   );
