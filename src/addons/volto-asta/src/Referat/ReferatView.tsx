@@ -73,61 +73,63 @@ const ReferatsView = (props) => {
   const messages = getMessages(intl.locale);
   console.log(data);
   return (
-    <div className="ReferatsView">
-      <div>
-        <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
-          {props?.data?.name}
-        </h3>
-        <FlexDiv>
-          <AttrBox
-            desc={messages.attr.email}
-            attrType="email"
-            content={props?.data?.email}
-          ></AttrBox>
-          <AttrBox
-            desc={messages.attr.phone}
-            attrType="phone"
-            content={props.data?.telefon}
-          ></AttrBox>
-          {isOrt && (
+    <div style={{ display: "flex" }}>
+      <div className="ReferatsView">
+        <div>
+          <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
+            {props?.data?.name}
+          </h3>
+          <FlexDiv>
             <AttrBox
-              desc={messages.attr.place}
-              content={props?.data?.ort}
+              desc={messages.attr.email}
+              attrType="email"
+              content={props?.data?.email}
             ></AttrBox>
+            <AttrBox
+              desc={messages.attr.phone}
+              attrType="phone"
+              content={props.data?.telefon}
+            ></AttrBox>
+            {isOrt && (
+              <AttrBox
+                desc={messages.attr.place}
+                content={props?.data?.ort}
+              ></AttrBox>
+            )}
+          </FlexDiv>
+        </div>
+        <div>
+          <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
+            {messages.attr.staff}
+          </h3>
+          <FlexDiv>
+            {props?.data?.mitarbeiter?.map(
+              (mitarbeiter: { name: string; desc: string }) => (
+                <div style={{ minWidth: "10rem", flex: "1" }}>
+                  <AttrBox
+                    desc={mitarbeiter.desc}
+                    content={mitarbeiter.name}
+                  ></AttrBox>
+                </div>
+              )
+            )}
+          </FlexDiv>
+          {props?.data?.anweseneheitsdienste && (
+            <>
+              <h3 style={{ marginBottom: "0.25rem", marginTop: "0.25rem" }}>
+                {messages.attr.attendance_times}
+              </h3>
+              <table>
+                {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
+                  <AttrBox
+                    desc={mapToDay(anweseneheit.tag, messages)}
+                    content={`${anweseneheit.startHour} - ${anweseneheit.endHour}`}
+                  ></AttrBox>
+                ))}
+              </table>
+            </>
           )}
-        </FlexDiv>
-      </div>
-      <div>
-        <h3 style={{ marginBottom: "0.25rem", fontSize: "1.3rem" }}>
-          {messages.attr.staff}
-        </h3>
-        <FlexDiv>
-          {props?.data?.mitarbeiter?.map(
-            (mitarbeiter: { name: string; desc: string }) => (
-              <div style={{ minWidth: "10rem", flex: "1" }}>
-                <AttrBox
-                  desc={mitarbeiter.desc}
-                  content={mitarbeiter.name}
-                ></AttrBox>
-              </div>
-            )
-          )}
-        </FlexDiv>
-        {props?.data?.anweseneheitsdienste && (
-          <>
-            <h3 style={{ marginBottom: "0.25rem", marginTop: "0.25rem" }}>
-              {messages.attr.attendance_times}
-            </h3>
-            <table>
-              {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
-                <AttrBox
-                  desc={mapToDay(anweseneheit.tag, messages)}
-                  content={`${anweseneheit.startHour} - ${anweseneheit.endHour}`}
-                ></AttrBox>
-              ))}
-            </table>
-          </>
-        )}
+        </div>
       </div>
     </div>
   );
