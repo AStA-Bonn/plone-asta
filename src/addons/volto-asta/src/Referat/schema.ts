@@ -75,6 +75,10 @@ export const ReferatsSchema = ({ intl }) => ({
       type: "string",
       title: "Ort",
     },
+    refkrz: {
+      type: "string",
+      title: "Refkuerzel",
+    },
     name: {
       type: "string",
       title: "Name",

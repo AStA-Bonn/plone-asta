@@ -71,6 +71,7 @@ const ReferatsEdit = (props) => {
       encoding: string;
     }
   );
+  console.log(data);
   const refShort = "IT";
 
   let refError: string | null = null;
