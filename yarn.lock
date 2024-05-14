@@ -1846,13 +1846,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bundled-es-modules/pdfjs-dist@npm:3.6.172-alpha.1":
-  version: 3.6.172-alpha.1
-  resolution: "@bundled-es-modules/pdfjs-dist@npm:3.6.172-alpha.1"
-  checksum: 5f5654dfc8262fea4b617475ff2f0cc387d9b89890435146577ed3b425dd9d1773103bb3c69180b33527de59b8eaf613e6b56d88afcbc5e2b773ed6ed1b6e39b
-  languageName: node
-  linkType: hard
-
 "@bundled-es-modules/pdfjs-dist@npm:^2.2.228-alpha1":
   version: 2.16.106
   resolution: "@bundled-es-modules/pdfjs-dist@npm:2.16.106"
@@ -1947,14 +1940,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-block-style@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "@eeacms/volto-block-style@npm:6.1.0"
+"@eeacms/volto-design-tokens@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@eeacms/volto-design-tokens@npm:1.0.2"
+  checksum: 9b37245c51a50d7bbb18b0007503b00babfbe7add0153123d089606398db3026267d2da439078f0b402e2b0a4dc404332a1e3167ff7d41cef3a90abbc2bc2e9b
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-hero-block@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@eeacms/volto-hero-block@npm:7.0.0"
+  dependencies:
+    "@eeacms/volto-object-widget": "*"
+    "@eeacms/volto-widget-theme-picker": ^1.0.1
+  checksum: ae502470fcaf4e884a3489d4d0396a58af362528be9ee5c8287a8bd807686ad08ce34abefe00e45f7edc2303aa45a7f8b78887df3282dd01feb16c22a0c2724a
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-object-widget@npm:*":
+  version: 7.0.0
+  resolution: "@eeacms/volto-object-widget@npm:7.0.0"
   dependencies:
     "@eeacms/volto-resize-helper": "*"
-    "@eeacms/volto-widget-theme-picker": "*"
-    react-color: ~2.18.1
-  checksum: 1a0abf8193d0cc873b03c9bedd4e4a64fb37e926a9985868f1a5f7c6139d509598b93170cefdff28da8fb1f8b24e7b8abca6a5bdaa26fef6b303d1ea467dc444
+  checksum: a6c6e03d339de51e79e83731332e340678afd8e08303da5bce954d80cd6f04c2945ee70efaf6a7bb811327a1388c1a46f5f35013a13c1ea02c73fd4eb8b32879
   languageName: node
   linkType: hard
 
@@ -1974,10 +1982,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-widget-theme-picker@npm:*":
+"@eeacms/volto-widget-theme-picker@npm:*, @eeacms/volto-widget-theme-picker@npm:^1.0.1":
   version: 1.1.5
   resolution: "@eeacms/volto-widget-theme-picker@npm:1.1.5"
   checksum: 20f1469cc82e22edc7a93e418910d8ed458a7975b8e3c4b1d5c19502132327011260a825e492a1418cfff724072e941a97512a7d1713864fc39406587a0307e8
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-widget-theme-picker@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@eeacms/volto-widget-theme-picker@npm:2.0.0"
+  checksum: 2d00d239a530dfb09c0b3cc2bfbc51b841155ca9fea7a0b080cec5a0088e510672f2c4b9afc78f4d0df13ff51af2f303e9610e43d25dec345b15d81bbbdbca19
   languageName: node
   linkType: hard
 
@@ -2413,15 +2428,6 @@ __metadata:
   dependencies:
     "@hapi/hoek": ^9.0.0
   checksum: 604dfd5dde76d5c334bd03f9001fce69c7ce529883acf92da96f4fe7e51221bf5e5110e964caca287a6a616ba027c071748ab636ff178ad750547fba611d6014
-  languageName: node
-  linkType: hard
-
-"@icons/material@npm:^0.2.4":
-  version: 0.2.4
-  resolution: "@icons/material@npm:0.2.4"
-  peerDependencies:
-    react: "*"
-  checksum: 24baa360cb83f7e1a9e6784ac11185d57eb895b0efd3070ec915693378330f35ff9feb248f650b9649fa3e1045601286585dc05795a4c734d4849b33900351ee
   languageName: node
   linkType: hard
 
@@ -16354,7 +16360,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.21, lodash@npm:^4.0.1, lodash@npm:^4.1.1, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.6.1, lodash@npm:^4.7.0":
+"lodash@npm:4.17.21, lodash@npm:^4.1.1, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.6.1, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -16596,13 +16602,6 @@ __metadata:
   peerDependencies:
     react: ">= 0.14.0"
   checksum: 8885c6343b71570b0a7ec16cd85a49b853a830234790ee7430e2517ea5d8d361ff138bd52147f650790f3e7b3a28a15c755fc16f8856dd01ddf09a6161782e06
-  languageName: node
-  linkType: hard
-
-"material-colors@npm:^1.2.1":
-  version: 1.2.6
-  resolution: "material-colors@npm:1.2.6"
-  checksum: 72d005ccccb82bab68eef3cd757e802668634fc86976dedb9fc564ce994f2d3258273766b7efecb7404a0031969e2d72201a1b74169763f0a53c0dd8d649209f
   languageName: node
   linkType: hard
 
@@ -17244,12 +17243,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "myvolotoproject@workspace:."
   dependencies:
-    "@bundled-es-modules/pdfjs-dist": 3.6.172-alpha.1
     "@codesyntax/volto-menu-customization": 0.3.0
     "@eeacms/volto-accordion-block": ^10.4.6
     "@eeacms/volto-anchors": "*"
-    "@eeacms/volto-block-style": ^6.1.0
+    "@eeacms/volto-design-tokens": 1.0.2
+    "@eeacms/volto-hero-block": 7.0.0
     "@eeacms/volto-pdf-block": 1.0.11
+    "@eeacms/volto-widget-theme-picker": 2.0.0
     "@mbarde/volto-fullcalendar-block": ^0.7.0
     "@myriadicity/volto-navigation-dropdown": 0.3.10
     "@plone/scripts": ^2.1.5
@@ -20113,20 +20113,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-color@npm:~2.18.1":
-  version: 2.18.1
-  resolution: "react-color@npm:2.18.1"
-  dependencies:
-    "@icons/material": ^0.2.4
-    lodash: ^4.17.11
-    material-colors: ^1.2.1
-    prop-types: ^15.5.10
-    reactcss: ^1.2.0
-    tinycolor2: ^1.4.1
-  checksum: 01b3010233b3470349ffe61b189782a4f9a93c6814fe770a3d7378cd573dbf30814d46f49ce89ec8ba4ca7171898387ec4412159bca5fc67cb46e1828c9cf7df
-  languageName: node
-  linkType: hard
-
 "react-colorful@npm:^5.1.2":
   version: 5.6.1
   resolution: "react-colorful@npm:5.6.1"
@@ -20909,15 +20895,6 @@ __metadata:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
   checksum: b254cc17ce3011788330f7bbf383ab653c6848902d7936a87b09d835d091e3f295f7e9dd1597c6daac5dc80f90e778c8230218ba8ad599f74adcc11e33b9d61b
-  languageName: node
-  linkType: hard
-
-"reactcss@npm:^1.2.0":
-  version: 1.2.3
-  resolution: "reactcss@npm:1.2.3"
-  dependencies:
-    lodash: ^4.0.1
-  checksum: c53e386a0881f1477e1cff661f6a6ad4c662230941f3827862193ac30f9b75cdf7bc7b4c7e5ca543d3e4e80fee1a3e9fa0056c206b1c0423726c41773ab3fe45
   languageName: node
   linkType: hard
 
@@ -23964,13 +23941,6 @@ __metadata:
   version: 1.0.3
   resolution: "tiny-warning@npm:1.0.3"
   checksum: da62c4acac565902f0624b123eed6dd3509bc9a8d30c06e017104bedcf5d35810da8ff72864400ad19c5c7806fc0a8323c68baf3e326af7cb7d969f846100d71
-  languageName: node
-  linkType: hard
-
-"tinycolor2@npm:^1.4.1":
-  version: 1.6.0
-  resolution: "tinycolor2@npm:1.6.0"
-  checksum: 6df4d07fceeedc0a878d7bac47e2cd47c1ceeb1078340a9eb8a295bc0651e17c750f73d47b3028d829f30b85c15e0572c0fd4142083e4c21a30a597e47f47230
   languageName: node
   linkType: hard
 

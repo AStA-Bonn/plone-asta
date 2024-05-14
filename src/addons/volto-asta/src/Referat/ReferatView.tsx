@@ -33,7 +33,7 @@ function AttrBox({
   }
   return (
     <div style={{ fontSize: "1rem", minWidth: "10rem", flex: "1" }}>
-      <p
+      <div
         style={{
           paddingTop: 0,
           marginTop: 0,
@@ -44,8 +44,8 @@ function AttrBox({
         {attrType === "email" && <a href={"mailto:" + content}>{content}</a>}
         {attrType === "phone" && <a href={"tel:" + content}>{content}</a>}
         {attrType === undefined && <p>{content}</p>}
-      </p>
-      <p
+      </div>
+      <div
         style={{
           paddingBottom: 0,
           marginBottom: "0.5rem",
@@ -53,8 +53,20 @@ function AttrBox({
           fontSize: "0.85rem",
         }}
       >
-        {desc}
-      </p>
+        <>
+          {Array.isArray(desc) ? (
+            desc.map((item, i) => (
+              <>
+                <p style={{ paddingBottom: 0, marginBottom: 0 }} key={i}>
+                  {item}
+                </p>
+              </>
+            ))
+          ) : (
+            <p>{desc}</p>
+          )}
+        </>
+      </div>
     </div>
   );
 }
@@ -114,19 +126,23 @@ const ReferatsView = (props) => {
               )
             )}
           </FlexDiv>
-          {props?.data?.anweseneheitsdienste && (
+          {props?.data?.anwesenheitsdienste && (
             <>
               <h3 style={{ marginBottom: "0.25rem", marginTop: "0.25rem" }}>
                 {messages.attr.attendance_times}
               </h3>
-              <table>
+              <FlexDiv>
                 {props?.data?.anwesenheitsdienste?.map((anweseneheit) => (
                   <AttrBox
-                    desc={mapToDay(anweseneheit.tag, messages)}
+                    key={anweseneheit["@id"]}
+                    desc={[
+                      mapToDay(anweseneheit.tag, messages),
+                      anweseneheit.ort,
+                    ]}
                     content={`${anweseneheit.startHour} - ${anweseneheit.endHour}`}
                   ></AttrBox>
                 ))}
-              </table>
+              </FlexDiv>
             </>
           )}
         </div>

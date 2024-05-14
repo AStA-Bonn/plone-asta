@@ -20,7 +20,7 @@ export const ÖffnungSchema = ({ intl }) => ({
     {
       id: "default",
       title: "",
-      fields: ["tag", "startHour", "endHour"],
+      fields: ["tag", "startHour", "endHour", "ort"],
     },
   ],
 
