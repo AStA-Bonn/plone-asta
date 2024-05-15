@@ -1,5 +1,12 @@
 ## Documentation
 
+To use the beta backend:
+
+```
+yarn
+RAZZLE_INTERNAL_API_PATH='http://beta.asta-bonn.de:8080/AStA' NODE_OPTIONS=--openssl-legacy-provider npx razzle start
+```
+
 ## connect to asta backend
 
 RAZZLE_INTERNAL_API_PATH='http://localhost:8080/AStA' NODE_OPTIONS=--openssl-legacy-provider npx razzle start
