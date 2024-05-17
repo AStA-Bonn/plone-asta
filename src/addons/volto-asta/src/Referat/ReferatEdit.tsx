@@ -72,7 +72,7 @@ const ReferatsEdit = (props) => {
     }
   );
   console.log(data);
-  const refShort = "IT";
+  const refShort = data.refkrz;
 
   let refError: string | null = null;
   if (refBericht.filename) {
