@@ -2,6 +2,7 @@ import tableSVG from "@plone/volto/icons/table.svg";
 import { ReferatsEdit, ReferatsView } from "./Referat";
 import Clock from "./widgets/Clock";
 import { NewsList } from "./NewsList/NewsList";
+import { routes } from "./Redirect/Redirect";
 const applyConfig = (config) => {
   config.blocks.blocksConfig.Referat = {
     id: "Referat",
@@ -30,6 +31,12 @@ const applyConfig = (config) => {
   ];
   config.widgets.widget.clock = Clock;
   config.settings.pluggableStylesBlocksWhitelist = [config.blocks.text];
+  if (config.addonRoutes) {
+    config.addonRoutes = [...config.addonRoutes, ...routes];
+  } else {
+    config.addonRoutes = routes;
+  }
+
   return config;
 };
 
