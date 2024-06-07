@@ -42,7 +42,7 @@ import saveSVG from '@plone/volto/icons/save.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
 
 import config from '@plone/volto/registry';
-import {contentIcons} from '../../../../../omelette/src/config/ContentIcons';
+import { contentIcons } from '../../../../../omelette/src/config/ContentIcons';
 
 const messages = defineMessages({
   edit: {
@@ -157,7 +157,6 @@ class Edit extends Component {
    * @returns {undefined}
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
-    console.log("nextProps", nextProps)
     if (this.props.getRequest.loading && nextProps.getRequest.loaded) {
       if (nextProps.content['@type']) {
         this.props.getSchema(
@@ -213,7 +212,6 @@ class Edit extends Component {
         nextProps.compare_to['@id'] !== this.state.compareTo['@id']) ||
         !this.state.compareTo)
     ) {
-      console.log("1", nextProps.compare_to);
       this.setState({ compareTo: nextProps.compare_to });
     }
   }
@@ -303,8 +301,6 @@ class Edit extends Component {
         }}
       />
     );
-
-    console.log("State", this.state.compareTo)
 
     return (
       <div id="page-edit">

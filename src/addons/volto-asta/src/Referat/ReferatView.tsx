@@ -83,7 +83,6 @@ const ReferatsView = (props) => {
   // isMail is bool
   const intl = useIntl();
   const messages = getMessages(intl.locale);
-  console.log(data);
   return (
     <div style={{ display: "flex" }}>
       <div className="ReferatsView">

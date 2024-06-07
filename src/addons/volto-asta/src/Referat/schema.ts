@@ -65,6 +65,7 @@ export const ReferatsSchema = ({ intl }) => ({
         "telefon",
         "mitarbeiter",
         "anwesenheitsdienste",
+        "refkrz",
         // 'align'
       ],
     },

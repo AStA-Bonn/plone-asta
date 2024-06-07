@@ -71,7 +71,6 @@ const ReferatsEdit = (props) => {
       encoding: string;
     }
   );
-  console.log(data);
   const refShort = data.refkrz;
 
   let refError: string | null = null;
@@ -97,7 +96,6 @@ const ReferatsEdit = (props) => {
           {!refBericht.data ? (
             <FileWidget
               onChange={(id, content) => {
-                console.log(content);
                 setRefBericht({ ...content });
               }}
             ></FileWidget>
