@@ -58,7 +58,7 @@ const NavItems = ({ items, lang, closeMenu }) => {
           )}
         </div>
       </div>
-      <div className="mobile table only mobile-dropdown">
+      <div className="mobile tablet only mobile-dropdown">
         {items.map((item) =>
           item && item.items && item.items.length > 0 ? (
             <Dropdown
