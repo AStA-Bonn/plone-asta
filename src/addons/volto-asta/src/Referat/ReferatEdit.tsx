@@ -167,7 +167,7 @@ const ReferatsEdit = (props) => {
                     setUploadState(UploadState.uploading);
                     upload({
                       "@type": "File",
-                      title: "test",
+                      title: refBericht.filename,
                       file: refBericht,
                     })
                       .then(() => {
