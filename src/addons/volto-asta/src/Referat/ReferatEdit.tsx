@@ -14,10 +14,16 @@ const upload = (file: { "@type": "File"; title: string; file: any }) => {
   return fetch(`/++api++/${joinedPath}/rechenschaftsberichte`, {
     body: JSON.stringify(file),
     method: "POST",
+  }).then((resp) => {
+      if(resp.status !== 200 && resp.status !== 201)
+       {
+          throw new Error(resp.statusText)
+       }
+     return resp
   });
 };
 
-const downloadFile = ({
+consi downloadFile = ({
   data,
   filename,
   "content-type": contentType,
