@@ -15,15 +15,14 @@ const upload = (file: { "@type": "File"; title: string; file: any }) => {
     body: JSON.stringify(file),
     method: "POST",
   }).then((resp) => {
-      if(resp.status !== 200 && resp.status !== 201)
-       {
-          throw new Error(resp.statusText)
-       }
-     return resp
+    if (resp.status !== 200 && resp.status !== 201) {
+      throw new Error(resp.statusText);
+    }
+    return resp;
   });
 };
 
-consi downloadFile = ({
+const downloadFile = ({
   data,
   filename,
   "content-type": contentType,
