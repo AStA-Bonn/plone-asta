@@ -28,7 +28,8 @@
     "volto-asta",
     "@mbarde/volto-fullcalendar-block",
     "@eeacms/volto-anchors",
-    "@eeacms/volto-accordion-block"
+    "@eeacms/volto-accordion-block",
+    "@eeacms/volto-banner"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -141,6 +142,7 @@
     "@codesyntax/volto-menu-customization": "0.3.0",
     "@eeacms/volto-accordion-block": "^10.4.6",
     "@eeacms/volto-anchors": "*",
+    "@eeacms/volto-banner": "4.0.0",
     "@eeacms/volto-design-tokens": "1.0.2",
     "@eeacms/volto-hero-block": "7.0.0",
     "@eeacms/volto-pdf-block": "1.0.11",
