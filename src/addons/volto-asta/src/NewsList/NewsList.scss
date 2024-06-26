@@ -5,10 +5,37 @@
   border-radius: 1rem;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
+  .title {
+    padding-top: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+    font-weight: 200;
+  }
   .container {
-    padding: 2px 16px;
+    padding: 4px 16px;
   }
   display: block;
+}
+
+.icon-line {
+  display: flex;
+  padding: 0;
+  text-size: 0.8rem;
+  height: 1.3rem;
+  font-weight: 200;
+}
+
+.unstyled-link {
+  text-decoration: none;
+  color: inherit;
+
+  & :hover {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 /* On mouse-over, add a deeper shadow */
