@@ -23,6 +23,7 @@ i.icons {
     .item .text {
       font-size: 1.2rem;
     }
+    margin-bottom: 4rem;
   }
   .item:hover {
     color: #430d0d !important;
