@@ -23,9 +23,13 @@
 .icon-line {
   display: flex;
   padding: 0;
+  margin: 0;
   text-size: 0.8rem;
-  height: 1.3rem;
   font-weight: 200;
+
+  p {
+    padding: 0 !important;
+  }
 }
 
 .unstyled-link {
