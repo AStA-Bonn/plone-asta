@@ -87,10 +87,9 @@ const NavItems = ({ items, lang, closeMenu }) => {
             <div
               key={item.url}
               onClick={() => {
-                console.log('CLOSE');
                 closeMenu();
               }}
-              style={{ marginBottom: '1rem' }}
+              style={{ marginBottom: '1rem', width: '100%', display: 'flex', justifyContent: 'center' }}
             >
               <NavItem item={item} lang={lang} />
             </div>
