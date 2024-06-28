@@ -27,11 +27,10 @@ const DropdownMobileMenu = ({ item, lang, close }) => {
           <div
             key={dropdownitem.url}
             onClick={() => {
-              console.log('CLOSE');
-              closeMenu();
+              close();
             }}
           >
-            <NavItem item={dropdownitem} lang={lang} style={{ padding: '1rem', marginBottom: '2rem' }} />
+            <NavItem item={dropdownitem} lang={lang} style={{ padding: '1rem', marginBottom: '2rem', fontSize: '1rem' }} />
           </div>
         ))}
       </div>
@@ -89,9 +88,9 @@ const NavItems = ({ items, lang, closeMenu }) => {
               onClick={() => {
                 closeMenu();
               }}
-              style={{ marginBottom: '1rem', width: '100%', display: 'flex', justifyContent: 'center' }}
+              style={{ marginBottom: '1rem', width: '100%', display: 'flex', justifyContent: 'center', fontSize: '1rem !important' }}
             >
-              <NavItem item={item} lang={lang} />
+              <NavItem item={item} lang={lang} style={{ fontSize: '1rem' }} />
             </div>
           ),
         )}
