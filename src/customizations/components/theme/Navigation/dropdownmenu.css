@@ -17,6 +17,7 @@ i.icons {
     right: unset !important;
     white-space: normal !important;
     background-color: red;
+    display: flex;
     .item {
       padding-bottom: 0;
     }
@@ -30,6 +31,7 @@ i.icons {
   }
   .item {
     font-size: 1.2rem;
+    color: #252525;
     .text {
       max-width: 95vw;
       display: inline-block;
@@ -37,4 +39,80 @@ i.icons {
       font-size: 1.2rem;
     }
   }
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  color: #252525 !important;
+}
+
+/* Basic button reset */
+.dropdown-button {
+  background-color: transparent;
+  border: none;
+  color: #333; /* Text color */
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Add an arrow icon to the button */
+.dropdown-button-text::before {
+  content: '▼'; /* Unicode character for down arrow */
+  margin-left: 10px;
+  font-size: 1.4rem;
+  color: #333; /* Arrow color */
+}
+
+.dropdown-button-text {
+  font-size: 1.4rem;
+}
+
+.dropdown-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dropdown-button:hover,
+.dropdown-button:focus {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  justify-content: center;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transform: translateY(-20px);
+}
+
+/* Show the dropdown content */
+.dropdown-content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Add some content inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
 }

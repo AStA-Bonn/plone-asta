@@ -68,10 +68,7 @@ class Navigation extends Component {
   componentDidMount() {
     const { settings } = config;
     if (!hasApiExpander('navigation', getBaseUrl(this.props.pathname))) {
-      this.props.getNavigation(
-        getBaseUrl(this.props.pathname),
-        settings.navDepth,
-      );
+      this.props.getNavigation(getBaseUrl(this.props.pathname), settings.navDepth);
     }
   }
 
@@ -83,15 +80,9 @@ class Navigation extends Component {
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
     const { settings } = config;
-    if (
-      nextProps.pathname !== this.props.pathname ||
-      nextProps.token !== this.props.token
-    ) {
+    if (nextProps.pathname !== this.props.pathname || nextProps.token !== this.props.token) {
       if (!hasApiExpander('navigation', getBaseUrl(this.props.pathname))) {
-        this.props.getNavigation(
-          getBaseUrl(nextProps.pathname),
-          settings.navDepth,
-        );
+        this.props.getNavigation(getBaseUrl(nextProps.pathname), settings.navDepth);
       }
     }
   }
@@ -133,20 +124,20 @@ class Navigation extends Component {
             aria-label={
               this.state.isMobileMenuOpen
                 ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                  type: this.props.type,
-                })
+                    type: this.props.type,
+                  })
                 : this.props.intl.formatMessage(messages.openMobileMenu, {
-                  type: this.props.type,
-                })
+                    type: this.props.type,
+                  })
             }
             title={
               this.state.isMobileMenuOpen
                 ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                  type: this.props.type,
-                })
+                    type: this.props.type,
+                  })
                 : this.props.intl.formatMessage(messages.openMobileMenu, {
-                  type: this.props.type,
-                })
+                    type: this.props.type,
+                  })
             }
             type="button"
             onClick={this.toggleMobileMenu}
@@ -156,35 +147,15 @@ class Navigation extends Component {
             </span>
           </button>
         </div>
-        <Menu
-          stackable
-          pointing
-          secondary
-          className="computer large screen widescreen only"
-          onClick={this.closeMobileMenu}
-        >
-          <NavItems
-            items={this.props.items}
-            lang={this.props.lang}
-            onClick={this.closeMobileMenu}
-            closeMenu={this.closeMobileMenu}
-          />
+        <Menu stackable pointing secondary className="computer large screen widescreen only" onClick={this.closeMobileMenu}>
+          <NavItems items={this.props.items} lang={this.props.lang} onClick={this.closeMobileMenu} closeMenu={this.closeMobileMenu} />
         </Menu>
-        <CSSTransition
-          in={this.state.isMobileMenuOpen}
-          timeout={500}
-          classNames="mobile-menu"
-          unmountOnExit
-        >
+        <CSSTransition in={this.state.isMobileMenuOpen} timeout={500} classNames="mobile-menu" unmountOnExit>
           <div key="mobile-menu-key" className="mobile-menu">
             <BodyClass className="has-mobile-menu-open" />
-            <div className="mobile-menu-nav">
-              <Menu stackable pointing secondary onClick={this.closeMobileMenu}>
-                <NavItems
-                  items={this.props.items}
-                  lang={this.props.lang}
-                  closeMenu={this.closeMobileMenu}
-                />
+            <div className="mobile-menu-nav" style={{ alignItems: 'baseline', paddingTop: '5rem' }}>
+              <Menu stackable pointing secondary>
+                <NavItems items={this.props.items} lang={this.props.lang} onClick={this.closeMobileMenu} closeMenu={this.closeMobileMenu} />
               </Menu>
             </div>
           </div>
