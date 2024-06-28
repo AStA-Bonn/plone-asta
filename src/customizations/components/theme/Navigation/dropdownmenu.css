@@ -22,7 +22,7 @@ i.icons {
       padding-bottom: 0;
     }
     .item .text {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     padding-bottom: 5rem;
   }
@@ -96,6 +96,7 @@ i.icons {
     opacity 0.3s ease,
     transform 0.3s ease;
   transform: translateY(-20px);
+  font-size: 1rem !important;
 }
 
 /* Show the dropdown content */
@@ -115,4 +116,8 @@ i.icons {
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+}
+
+.navItem {
+  font-size: 1rem !important;
 }

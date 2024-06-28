@@ -30,7 +30,7 @@ const DropdownMobileMenu = ({ item, lang, close }) => {
               close();
             }}
           >
-            <NavItem item={dropdownitem} lang={lang} style={{ padding: '1rem', marginBottom: '2rem', fontSize: '1rem' }} />
+            <NavItem className="navItem" item={dropdownitem} lang={lang} style={{ padding: '1rem', marginBottom: '2rem', fontSize: '1rem' }} />
           </div>
         ))}
       </div>
@@ -90,7 +90,7 @@ const NavItems = ({ items, lang, closeMenu }) => {
               }}
               style={{ marginBottom: '1rem', width: '100%', display: 'flex', justifyContent: 'center', fontSize: '1rem !important' }}
             >
-              <NavItem item={item} lang={lang} style={{ fontSize: '1rem' }} />
+              <NavItem className="navItem" item={item} lang={lang} style={{ fontSize: '1rem' }} />
             </div>
           ),
         )}
