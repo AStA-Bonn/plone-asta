@@ -42,6 +42,19 @@ const ServiceTimesComponent = ({ serviceTimes }) => {
   );
 };
 
+const MeetingTime = ({ meeting }: { meeting: RegularMeeting }) => {
+  return (
+    <div>
+      <h4 style={{ paddingBottom: 0, marginBottom: 0, marginTop: "1rem" }}>Regelmäßiger Sitzungstermin</h4>
+      <span>Wochentag: {meeting.dayOfWeek}</span>
+      <br />
+      <span>Uhrzeit: {meeting.time}</span>
+      <br />
+      <span>Ort: {meeting.location}</span>
+    </div>
+  );
+};
+
 function FachschaftenListe({}) {
   return (
     <Async
@@ -67,6 +80,8 @@ function FachschaftenListe({}) {
                   Adresse: {studentBody.address}
                   <br />
                   Website: {studentBody.website.length > 1 ? <a href={studentBody.website}> {studentBody.website}</a> : "/"}
+                  <br />
+                  {studentBody.regularMeeting && <MeetingTime meeting={studentBody.regularMeeting} />}
                   <br />
                   {hasServiceTimes ? <ServiceTimesComponent serviceTimes={studentBody.serviceTimes} /> : "Keine Anwesehenheitszeiten"}
                 </div>
