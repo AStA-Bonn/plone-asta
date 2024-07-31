@@ -60,6 +60,7 @@ export const ReferatsSchema = ({ intl }) => ({
       title: "",
       fields: [
         "name",
+        "isConsultation",
         "email",
         "ort",
         "telefon",
@@ -72,6 +73,10 @@ export const ReferatsSchema = ({ intl }) => ({
   ],
 
   properties: {
+    isConsultation: {
+      type: "bool",
+      title: "Beratung?",
+    },
     ort: {
       type: "string",
       title: "Ort",

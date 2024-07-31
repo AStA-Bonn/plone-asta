@@ -22,12 +22,7 @@ const upload = (file: { "@type": "File"; title: string; file: any }) => {
   });
 };
 
-const downloadFile = ({
-  data,
-  filename,
-  "content-type": contentType,
-  encoding,
-}) => {
+const downloadFile = ({ data, filename, "content-type": contentType, encoding }) => {
   let blobData;
 
   if (encoding === "base64") {
@@ -74,7 +69,7 @@ const ReferatsEdit = (props) => {
       filename: string;
       "content-type": string;
       encoding: string;
-    }
+    },
   );
   const refShort = data.refkrz;
 
@@ -83,8 +78,7 @@ const ReferatsEdit = (props) => {
     const splitted = refBericht.filename.split("_");
     const dateRegex = /^\d{4}-(0[1-9]|1[0-2])$/;
     if (splitted[0] !== "Rechenschaftsbericht") {
-      refError =
-        "Rechenschaftsberichte beginnt nicht mit 'Rechenschaftsbericht'";
+      refError = "Rechenschaftsberichte beginnt nicht mit 'Rechenschaftsbericht'";
     } else if (splitted[1] !== refShort) {
       refError = `Rechenschaftsberichte hat nicht den Referatsnamen ${refShort}`;
     } else if (dateRegex.test(splitted[2])) {
@@ -113,28 +107,19 @@ const ReferatsEdit = (props) => {
                 error={!!refError}
                 placeholder="Rechenschaftsbericht.pdf"
                 value={refBericht.filename}
-                disabled={
-                  UploadState.uploaded === uploadState ||
-                  UploadState.uploading === uploadState
-                }
+                disabled={UploadState.uploaded === uploadState || UploadState.uploading === uploadState}
                 onChange={(_, newName) => {
                   setRefBericht({ ...refBericht, filename: newName.value });
                 }}
               ></Input>
               {refError && (
                 <div>
-                  Fehler: {refError}.{" "}
-                  <Button
-                    disabled={
-                      UploadState.uploaded === uploadState ||
-                      UploadState.uploading === uploadState
-                    }
+                  Fehler: {refError}. <Button
+                    disabled={UploadState.uploaded === uploadState || UploadState.uploading === uploadState}
                     onClick={() => {
                       const now = new Date();
                       const year = now.getFullYear();
-                      const month = (now.getMonth() + 1)
-                        .toString()
-                        .padStart(2, "0"); // +1 because getMonth() returns 0-11
+                      const month = (now.getMonth() + 1).toString().padStart(2, "0"); // +1 because getMonth() returns 0-11
                       const name = `Rechenschaftsbericht_${refShort}_${year}-${month}.pdf`;
                       setRefBericht({ ...refBericht, filename: name });
                     }}
@@ -153,10 +138,7 @@ const ReferatsEdit = (props) => {
                   View
                 </Button>
                 <Button
-                  disabled={
-                    UploadState.uploaded === uploadState ||
-                    UploadState.uploading === uploadState
-                  }
+                  disabled={UploadState.uploaded === uploadState || UploadState.uploading === uploadState}
                   onClick={() => {
                     setRefBericht({} as any);
                   }}
@@ -164,10 +146,7 @@ const ReferatsEdit = (props) => {
                   Remove
                 </Button>
                 <Button
-                  disabled={
-                    UploadState.uploaded === uploadState ||
-                    UploadState.uploading === uploadState
-                  }
+                  disabled={UploadState.uploaded === uploadState || UploadState.uploading === uploadState}
                   onClick={() => {
                     setUploadState(UploadState.uploading);
                     upload({
@@ -199,12 +178,7 @@ const ReferatsEdit = (props) => {
                   </Button>
                 </>
               )}
-              {uploadState == UploadState.error && (
-                <>
-                  Rechenschaftsberichte Hochladen Fehlgeschalgen, probiere es
-                  gleich nochmal
-                </>
-              )}
+              {uploadState == UploadState.error && <>Rechenschaftsberichte Hochladen Fehlgeschalgen, probiere es gleich nochmal</>}
             </>
           )}
         </Segment.Group>

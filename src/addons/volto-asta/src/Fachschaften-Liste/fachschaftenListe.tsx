@@ -1,6 +1,7 @@
 import React from "react";
 import { Async, useAsync, useFetch } from "react-async";
 import { withBlockExtensions } from "@plone/volto/helpers";
+import "./FSList.scss";
 
 type ServiceTimes = {
   monday: string;
@@ -42,7 +43,6 @@ const ServiceTimesComponent = ({ serviceTimes }) => {
 };
 
 function FachschaftenListe({}) {
-  console.log("CALLED");
   return (
     <Async
       key="key"
@@ -57,16 +57,19 @@ function FachschaftenListe({}) {
           console.log(data);
           return Object.keys(data).map((key) => {
             const studentBody = data[key];
+            const hasServiceTimes = ["monday", "tuesday", "wednesday", "thursday", "friday"].map((day) => studentBody.serviceTimes[day].length > 1).reduce((acc, v) => v || acc, false);
             return (
-              <div key={key}>
-                <h3>{key}</h3>
-                Telefon: {studentBody.phone.length > 1 ? <a href={`tel:${studentBody.website}`}>{studentBody.phone}</a> : "/"}
-                <br />
-                Adresse: {studentBody.address}
-                <br />
-                Website: {studentBody.website.length > 1 ? <a href={studentBody.website}> {studentBody.website}</a> : "/"}
-                <br />
-                <ServiceTimesComponent serviceTimes={studentBody.serviceTimes} />
+              <div className="card" key={key}>
+                <h3 className="title">{key}</h3>
+                <div className="container">
+                  Telefon: {studentBody.phone.length > 1 ? <a href={`tel:${studentBody.website}`}>{studentBody.phone}</a> : "/"}
+                  <br />
+                  Adresse: {studentBody.address}
+                  <br />
+                  Website: {studentBody.website.length > 1 ? <a href={studentBody.website}> {studentBody.website}</a> : "/"}
+                  <br />
+                  {hasServiceTimes ? <ServiceTimesComponent serviceTimes={studentBody.serviceTimes} /> : "Keine Anwesehenheitszeiten"}
+                </div>
               </div>
             );
           });
