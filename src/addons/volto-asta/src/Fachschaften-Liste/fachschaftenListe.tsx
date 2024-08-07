@@ -27,10 +27,51 @@ type StudentBody = {
 
 type StudentBodies = Record<string, StudentBody>;
 
+const nameMapping: Map<string, string> = new Map([
+    ["Agrarwissenschaften", "Agrarwissenschaften"],
+    ["Altkatholisches-Seminar", "Altkatholisches Seminar"],
+    ["Anglistik-Amerikanistik-und-Keltologie", "Anglistik, Amerikanistik und Keltologie"],
+    ["Archaeologie", "Archäologie"],
+    ["Biologie", "Biologie"],
+    ["Chemie", "Chemie"],
+    ["ELW", "ELW"],
+    ["Ethnologie-Altamerikanistik", "Ethnologie / Altamerikanistik"],
+    ["Evangelische-Theologie", "Evangelische Theologie"],
+    ["GeKoSka", "GeKoSka"],
+    ["Geodaesie", "Geodäsie"],
+    ["Geographie", "Geographie"],
+    ["Geowissenschaften", "Geowissenschaften"],
+    ["Geschichte", "Geschichte"],
+    ["Griechische-und-Lateinische-Philologie", "Griechische und Lateinische Philologie"],
+    ["Klassische-und-Romanische-Philologie", "Klassische und Romanische Philologie"],
+    ["Informatik", "Informatik"],
+    ["Interkulturelle-Kommunikation-und-Mehrsprachigkeitsforschung-IKM", "Interkulturelle Kommunikation und Mehrsprachigkeitsforschung (IKM)"],
+    ["Jura", "Jura"],
+    ["Katholische-Theologie", "Katholische Theologie"],
+    ["Kulturanthropologie", "Kulturanthropologie"],
+    ["Kunstgeschichte", "Kunstgeschichte"],
+    ["Lehramt", "Lehramt"],
+    ["Mathematik", "Mathematik"],
+    ["Medienwissenschaft", "Medienwissenschaft"],
+    ["Medizin", "Medizin"],
+    ["Meteorologie-und-Geophysik", "Meteorologie und Geophysik"],
+    ["Molekulare-Biomedizin", "Molekulare Biomedizin"],
+    ["Musikwissenschaften-Sound-Studies", "Musikwissenschaften/Sound Studies"],
+    ["Neuroscience", "Neuroscience"],
+    ["OrientAsia", "OrientAsia"],
+    ["Pharmazie", "Pharmazie"],
+    ["Philosophie", "Philosophie"],
+    ["Physik-Astronomie", "Physik/Astronomie"],
+    ["Politik-Soziologie", "Politik & Soziologie"],
+    ["Psychologie", "Psychologie"],
+    ["VWL", "VWL"],
+    ["Zahnmedizin", "Zahnmedizin"],
+]);
+
 const ServiceTimesComponent = ({ serviceTimes }) => {
   return (
     <div>
-      <h4>Anwesehenheitszeiten:</h4>
+      <h4>Anwesenheitszeiten:</h4>
       <ul>
         {serviceTimes.monday.length > 1 && <li>Montag: {serviceTimes.monday}</li>}
         {serviceTimes.tuesday.length > 1 && <li>Dienstag: {serviceTimes.tuesday}</li>}
@@ -70,20 +111,21 @@ function FachschaftenListe({}) {
           console.log(data);
           return Object.keys(data).map((key) => {
             const studentBody = data[key];
+            const name = nameMapping.get(key) || key;
             const hasServiceTimes = ["monday", "tuesday", "wednesday", "thursday", "friday"].map((day) => studentBody.serviceTimes[day].length > 1).reduce((acc, v) => v || acc, false);
             return (
               <div className="card" key={key}>
-                <h3 className="title">{key}</h3>
+                <h3 className="title">{name}</h3>
                 <div className="container">
                   Telefon: {studentBody.phone.length > 1 ? <a href={`tel:${studentBody.website}`}>{studentBody.phone}</a> : "/"}
                   <br />
                   Adresse: {studentBody.address}
                   <br />
-                  Website: {studentBody.website.length > 1 ? <a href={studentBody.website}> {studentBody.website}</a> : "/"}
+                  Webseite: {studentBody.website.length > 1 ? <a href={studentBody.website}> {studentBody.website}</a> : "/"}
                   <br />
                   {studentBody.regularMeeting && <MeetingTime meeting={studentBody.regularMeeting} />}
                   <br />
-                  {hasServiceTimes ? <ServiceTimesComponent serviceTimes={studentBody.serviceTimes} /> : "Keine Anwesehenheitszeiten"}
+                  {hasServiceTimes ? <ServiceTimesComponent serviceTimes={studentBody.serviceTimes} /> : "Keine Anwesenheitszeiten"}
                 </div>
               </div>
             );
