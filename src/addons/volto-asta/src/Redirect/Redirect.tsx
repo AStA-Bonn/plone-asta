@@ -27,9 +27,7 @@ export const routes = [
   },
   {
     path: "/Referat_für_Kultur_und_studentische_Initiativen",
-    component: RedirectAStASites(
-      "de/referate/referat-fuer-kultur-und-studentische-initiativen"
-    ),
+    component: RedirectAStASites("de/referate/referat-fuer-kultur-und-studentische-initiativen"),
   },
   {
     path: "/Öffentlichkeitsreferat",
@@ -53,15 +51,11 @@ export const routes = [
   },
   {
     path: "/Referat_für_FLINTA*_und_Geschlechtergerechtigkeit",
-    component: RedirectAStASites(
-      "de/referate/referat-fuer-flinta-und-geschlechtergerechtigkeit"
-    ),
+    component: RedirectAStASites("de/referate/referat-fuer-flinta-und-geschlechtergerechtigkeit"),
   },
   {
     path: "/Referat_für_internationale_Studierende",
-    component: RedirectAStASites(
-      "de/referate/referat-fuer-internationale-studierende"
-    ),
+    component: RedirectAStASites("de/referate/referat-fuer-internationale-studierende"),
   },
   {
     path: "/Queer-Referat",
@@ -102,9 +96,7 @@ export const routes = [
   },
   {
     path: "/Fachschaften",
-    component: RedirectAStASites(
-      "de/referate/fachschaftenreferat/fachschaften"
-    ),
+    component: RedirectAStASites("de/referate/fachschaftenreferat/fachschaften"),
   },
   {
     path: "/Kontakt",
@@ -120,9 +112,7 @@ export const routes = [
   },
   {
     path: "/Studentisches_Wohnen",
-    component: RedirectAStASites(
-      "de/referate/sozialreferat/sozialberatung#-wohnberatung-"
-    ),
+    component: RedirectAStASites("de/referate/sozialreferat/sozialberatung#-wohnberatung-"),
   },
   {
     path: "/Wohnen_für_Hilfe",
@@ -142,9 +132,7 @@ export const routes = [
   },
   {
     path: "/Semesterticket-Rückerstattung",
-    component: RedirectAStASites(
-      "de/service/beratungen/semesterticket-rueckerstattung"
-    ),
+    component: RedirectAStASites("de/service/beratungen/semesterticket-rueckerstattung"),
   },
   {
     path: "/Freitisch",
@@ -152,9 +140,7 @@ export const routes = [
   },
   {
     path: "/Ausländerreferat",
-    component: RedirectAStASites(
-      "de/referate/referat-fuer-internationale-studierende"
-    ),
+    component: RedirectAStASites("de/referate/referat-fuer-internationale-studierende"),
   },
   {
     path: "/BOCKS",
@@ -162,13 +148,15 @@ export const routes = [
   },
   {
     path: "/Psychosoziale_Beratung",
-    component: RedirectAStASites(
-      "de/referate/sozialreferat/psychosoziale-beratung"
-    ),
+    component: RedirectAStASites("de/referate/sozialreferat/psychosoziale-beratung"),
   },
   {
     path: "/Sozialberatung",
     component: RedirectAStASites("de/referate/sozialreferat/sozialberatung"),
+  },
+  {
+    path: "/Studiticket",
+    component: RedirectAStASites("de/service/beratungen/mobilitaet-studiticket"),
   },
 ];
 
