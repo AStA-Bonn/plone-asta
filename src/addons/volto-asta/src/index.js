@@ -1,6 +1,7 @@
 import tableSVG from "@plone/volto/icons/table.svg";
 import { ReferatsEdit, ReferatsView } from "./Referat";
 import { FachschaftenListe, FachschaftenListeEdit } from "./Fachschaften-Liste";
+import { AppSettings, AppSettingsEdit } from "./Appsettings";
 import Clock from "./widgets/Clock";
 import { NewsList } from "./NewsList/NewsList";
 import { routes } from "./Redirect/Redirect";
@@ -28,6 +29,24 @@ const applyConfig = (config) => {
     view: FachschaftenListe,
     edit: FachschaftenListeEdit,
     restricted: false,
+    mostUsed: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  };
+  config.blocks.blocksConfig.App = {
+    id: "App",
+    title: "AppView",
+    icon: tableSVG,
+    group: "common",
+    view: AppSettings,
+    edit: AppSettingsEdit,
+    restricted: (opts) => {
+      console.log("foo", opts.properties["@id"].includes("de/app"));
+      return !opts.properties["@id"].includes("de/app");
+    },
     mostUsed: true,
     sidebarTab: 1,
     security: {

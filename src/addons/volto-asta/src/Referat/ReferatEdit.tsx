@@ -195,6 +195,7 @@ const ReferatsEdit = (props) => {
             formData={data}
           />
         </Segment.Group>
+        ID: {block}
       </SidebarPortal>
       <ReferatsView {...props} />
     </>

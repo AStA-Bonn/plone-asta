@@ -67,6 +67,7 @@ export const ReferatsSchema = ({ intl }) => ({
         "mitarbeiter",
         "anwesenheitsdienste",
         "refkrz",
+        "notInApp",
         // 'align'
       ],
     },
@@ -74,8 +75,12 @@ export const ReferatsSchema = ({ intl }) => ({
 
   properties: {
     isConsultation: {
-      type: "bool",
+      type: "boolean",
       title: "Beratung?",
+    },
+    notInApp: {
+      type: "boolean",
+      title: "Nicht in App anzeigen",
     },
     ort: {
       type: "string",
