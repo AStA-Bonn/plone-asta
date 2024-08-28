@@ -44,8 +44,7 @@ const applyConfig = (config) => {
     view: AppSettings,
     edit: AppSettingsEdit,
     restricted: (opts) => {
-      console.log("foo", opts.properties["@id"].includes("de/app"));
-      return !opts.properties["@id"].includes("de/app");
+      return !opts?.properties["@id"]?.includes("de/app");
     },
     mostUsed: true,
     sidebarTab: 1,
