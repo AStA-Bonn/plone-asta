@@ -124,20 +124,20 @@ class Navigation extends Component {
             aria-label={
               this.state.isMobileMenuOpen
                 ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
+                  type: this.props.type,
+                })
                 : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
+                  type: this.props.type,
+                })
             }
             title={
               this.state.isMobileMenuOpen
                 ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
+                  type: this.props.type,
+                })
                 : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
+                  type: this.props.type,
+                })
             }
             type="button"
             onClick={this.toggleMobileMenu}
@@ -150,7 +150,7 @@ class Navigation extends Component {
         <Menu stackable pointing secondary className="computer large screen widescreen only" onClick={this.closeMobileMenu}>
           <NavItems items={this.props.items} lang={this.props.lang} onClick={this.closeMobileMenu} closeMenu={this.closeMobileMenu} />
         </Menu>
-        <CSSTransition in={this.state.isMobileMenuOpen} timeout={500} classNames="mobile-menu" unmountOnExit>
+        <CSSTransition in={this.state.isMobileMenuOpen} timeout={500} classNames="mobile-menu mobile tablet only" unmountOnExit>
           <div key="mobile-menu-key" className="mobile-menu">
             <BodyClass className="has-mobile-menu-open" />
             <div className="mobile-menu-nav" style={{ alignItems: 'baseline', paddingTop: '5rem' }}>
