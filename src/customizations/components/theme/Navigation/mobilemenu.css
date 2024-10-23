@@ -1,0 +1,42 @@
+.mobile-nav-menu {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  padding: 10px;
+  border-bottom: 1px solid #555;
+  font-size: 1rem;
+}
+
+.menu-link {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu-indicator {
+  margin-left: 10px;
+}
+
+.submenu-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.submenu-item {
+  padding: 8px 0;
+  cursor: pointer;
+}

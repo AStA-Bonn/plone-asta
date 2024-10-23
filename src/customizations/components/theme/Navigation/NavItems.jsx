@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Dropdown, Button } from 'semantic-ui-react';
 
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
+import { MobileMenu } from './MobileMenu';
 
 import './dropdownmenu.css';
 
@@ -89,9 +90,7 @@ const NavItems = ({ items, lang, closeMenu }) => {
                 closeMenu();
               }}
               style={{ marginBottom: '1rem', width: '100%', display: 'flex', justifyContent: 'center', fontSize: '1rem !important' }}
-            >
-              <NavItem className="navItem" item={item} lang={lang} style={{ fontSize: '1rem' }} />
-            </div>
+            ></div>
           ),
         )}
       </div>
@@ -100,3 +99,4 @@ const NavItems = ({ items, lang, closeMenu }) => {
 };
 
 export default NavItems;
+// <NavItem className="navItem" item={item} lang={lang} style={{ fontSize: '1rem' }} />;

@@ -14,8 +14,10 @@ import { BodyClass, getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import { getNavigation } from '@plone/volto/actions';
 import { CSSTransition } from 'react-transition-group';
-//import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
+import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
+
 import NavItems from './NavItems';
+import { MobileMenu } from './MobileMenu';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -155,7 +157,7 @@ class Navigation extends Component {
             <BodyClass className="has-mobile-menu-open" />
             <div className="mobile-menu-nav" style={{ alignItems: 'baseline', paddingTop: '5rem' }}>
               <Menu stackable pointing secondary>
-                <NavItems items={this.props.items} lang={this.props.lang} onClick={this.closeMobileMenu} closeMenu={this.closeMobileMenu} />
+                <MobileMenu items={this.props.items} lang={this.props.lang} closeMenu={this.closeMobileMenu} />
               </Menu>
             </div>
           </div>
@@ -176,3 +178,4 @@ export default compose(
     { getNavigation },
   ),
 )(Navigation);
+//                <NavItems items={this.props.items} lang={this.props.lang} onClick={this.closeMobileMenu} closeMenu={this.closeMobileMenu} />
