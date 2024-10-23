@@ -2,6 +2,7 @@
  * WHY?!
  * The original component attaches search to the subpath: if i am on /de/foo, then the search will be /de/foo/search
  * That does not work! In this component we attach the search to '/de/search' or '/en/search'
+ * see: https://github.com/plone/volto/issues/6428
  */
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
