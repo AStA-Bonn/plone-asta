@@ -158,6 +158,10 @@ export const routes = [
     path: "/Studiticket",
     component: RedirectAStASites("de/service/beratungen/mobilitaet-studiticket"),
   },
+  {
+    path: "/Rechtsberatung",
+    component: RedirectAStASites("https://asta-bonn.de/de/service/beratungen/rechtsberatung"),
+  },
 ];
 
 export default RedirectAStASites;
