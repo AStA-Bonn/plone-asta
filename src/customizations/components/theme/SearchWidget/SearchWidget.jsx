@@ -36,21 +36,24 @@ const SearchWidget = (props) => {
     setText(value);
   };
   const pathname = props.pathname;
+  let actionUrl = `/de/search?SearchableText=${encodeURIComponent(text)}`;
+  console.log(pathname);
+  if (pathname?.includes('/de')) {
+    actionUrl = `/de/search?SearchableText=${encodeURIComponent(text)}`;
+  } else {
+    actionUrl = `/en/search?SearchableText=${encodeURIComponent(text)}`;
+  }
   const onSubmit = (event) => {
     //const path = pathname?.length > 0 ? `&path=${encodeURIComponent(pathname)}` : '';
-    const path = '';
 
-    if (pathname.includes('/de')) {
-      history.push(`/de/search?SearchableText=${encodeURIComponent(text)}${path}`);
-    } else {
-      history.push(`/en/search?SearchableText=${encodeURIComponent(text)}${path}`);
-    }
+    history.push(actionUrl);
     // reset input value
     setText('');
     event.preventDefault();
   };
 
   const navroot = useSelector((state) => state.navroot?.data);
+
   useEffect(() => {
     console.log({ navroot, url: getBaseUrl(pathname) });
     if (!hasApiExpander('navroot', getBaseUrl(pathname))) {
@@ -58,8 +61,10 @@ const SearchWidget = (props) => {
     }
   }, [dispatch, pathname]);
 
+  console.log('navroot is', navroot);
   return (
-    <Form action={`${navroot?.navroot?.['@id']}/search`} onSubmit={onSubmit}>
+    // remove navroot as bad
+    <Form action={actionUrl} onSubmit={onSubmit}>
       <Form.Field className="searchbox">
         <Input aria-label={intl.formatMessage(messages.search)} onChange={onChangeText} name="SearchableText" value={text} transparent autoComplete="off" placeholder={intl.formatMessage(messages.searchSite)} title={intl.formatMessage(messages.search)} />
         <button aria-label={intl.formatMessage(messages.search)}>
